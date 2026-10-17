@@ -1,4 +1,50 @@
-# AI 自动对诗平台
+<div align="center">
+
+# AI 自动对诗平台 · PoetryDuel
+
+**你出上句，AI 对下句 —— 对联 / 接龙 / 唱和 / 飞花令，四种玩法。**
+
+[![Python](https://img.shields.io/badge/python-3.9%2B-3776AB?logo=python&logoColor=white)](#)
+[![Web](https://img.shields.io/badge/UI-Web%20%2B%20%E5%8F%A4%E5%85%B8%E6%B0%B4%E5%A2%A8%E9%A3%8E-2ea44f)](#)
+[![Model](https://img.shields.io/badge/%E6%A8%A1%E5%9E%8B-%E4%BA%91%E7%AB%AF%20%2F%20%E6%9C%AC%E5%9C%B0%20Ollama%20%2F%20%E5%86%85%E7%BD%AE%E5%85%9C%E5%BA%95-EE4C2C)](#)
+[![Offline](https://img.shields.io/badge/%E7%A6%BB%E7%BA%BF-%E5%86%85%E7%BD%AE%E7%A4%BA%E4%BE%8B%E5%85%9C%E5%BA%95-8957E5)](#)
+[![Exe](https://img.shields.io/badge/%E5%8F%91%E5%B8%83-PyInstaller%20onefile-0078D6?logo=windows&logoColor=white)](#)
+
+</div>
+
+---
+
+## 一句话
+
+一个能真正陪你玩古诗的 Web 应用。四种玩法各有各的格律约束：
+对联要平仄相对、接龙要尾字押韵、唱和要依原诗体、飞花令要含指定字。
+
+**最难的是"不联网也能用"** —— 模型走三通道自动降级：
+云端大模型 → 本地 Ollama → 内置示例兜底，断网也不会甩你一个错误框。
+
+## 亮点
+
+| | |
+|---|---|
+| **四种玩法** | 对联（平仄/词性/意境）、接龙（尾字押韵校验）、唱和（依原诗体响应一阕）、飞花令（优先内置诗词库检索经典名句） |
+| **三通道自动切换** | 云端 → Ollama → 内置示例，任一条通就继续 |
+| **流式输出** | AI 诗句逐字渲染，打字机效果 |
+| **历史记录** | 存浏览器 localStorage，刷新不丢 |
+| **隐私友好** | 无自动弹窗；API Key 以 Base64 加密存本地浏览器，不上传任何服务器 |
+| **可打包** | `PoetryDuel.spec` → 单文件 exe，双击即用 |
+
+## 30 秒上手
+
+```powershell
+python -m pip install --target libs -r requirements.txt
+python start_server.py          # 默认 http://127.0.0.1:8000
+```
+
+配置项见 `.env.example`。
+
+---
+
+## 详细说明
 
 一个 Web 版 AI 对诗应用：你出上句，AI 自动对诗回应。支持**对联、诗词接龙、唱和、飞花令**四种经典玩法，古典水墨风界面，云端大模型与本地模型自动切换。
 
